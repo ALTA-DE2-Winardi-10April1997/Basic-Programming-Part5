@@ -1,5 +1,13 @@
 def muncul_sekali(angka):
-    return []
+    number = [int(chr) for chr in angka]
+    kemunculan = {}
+    for i in number:
+        if i in kemunculan:
+            kemunculan[i] +=1
+        else:
+            kemunculan[i] =1
+    once = [key for key, value in kemunculan.items() if value == 1]
+    return once
 
 if __name__ == '__main__':
     print(muncul_sekali("1234123")) # [4]
